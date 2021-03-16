@@ -267,6 +267,34 @@ footer .attribution a, footer p a {
   main section.interactive div.content h2 {
     font-size: 3rem;
   }
+  main section.creations {
+    width: 80%;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  main section.creations h2 {
+    width: 80%;
+    margin: 5% 0;
+    font-size: 2.5rem;
+  }
+  main section.creations .button {
+    order: 2;
+    margin: 0 0 0 0;
+    padding: 1% 1%;
+  }
+  main section.creations .cards {
+    order: 5;
+    width: 20%;
+    margin: 2% 0.5%;
+  }
+  main section.creations .cards h3 {
+    top: initial;
+    bottom: 10%;
+    left: 15%;
+    font-size: 2rem;
+    width: 70%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
