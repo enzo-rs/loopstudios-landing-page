@@ -105,7 +105,58 @@ main {
       }
     }
     
-    
+    .button {
+      @include title;
+      text-decoration: none;
+      color: $Black;
+      border: $Black solid 1px;
+      padding: 3% 8%;
+      font-weight: bold;
+      font-size: 0.875rem;
+      margin: 5% 0 20% 0;
+    }
+  }
+}
+
+footer {
+  background-color: $Black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include font-alata;
+  text-align: center;
+  padding: 10% 0;
+
+  img {
+    width: 35%;
+    margin: 5% auto;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      margin: 30% 0 ;
+    }
+  }
+  div.icons {
+    margin: 5% 0;
+    width: 50%;
+    .icon-item {
+      margin: 0 2%;
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  .attribution, p {
+    color: $Dark_Gray;
+    font-size: 0.875rem;
+    a {
+      text-decoration: none;
+      color: $Dark_Gray;
+    }
   }
 }
 
