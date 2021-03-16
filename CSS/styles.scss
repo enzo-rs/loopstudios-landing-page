@@ -1,0 +1,112 @@
+@import 'base/index.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+img { 
+    width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  height: 650px;
+  img.banner-background {
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+  }
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: white;
+  font-family: sans-serif;
+  position: absolute;
+  top: 0;
+
+  .test {
+      height: 60px;
+      width: 100%;
+      padding: 5%;
+    img {
+        width: 50%;
+    }
+    ul {
+        display: none;
+    }
+  }
+
+  .main-title {
+        h1 {
+          @include title;
+            border: white solid 2px;
+            width: 90%;
+            margin: 0 auto;
+        }
+  }
+}
+
+main {
+  margin: 0 5%;
+  section.interactive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20% 0 30% 0 ;
+    text-align: center;
+    img {
+      margin-bottom: 10%;
+    }
+    h2 {
+      @include title;
+      font-size: 2rem;
+      margin-bottom: 5%
+    }
+    p {
+      @include font-alata;
+      color: $Dark_Gray;
+    }
+    h2, p {
+      width: 90%;
+    }
+  }
+
+  section.creations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3, h2 {
+      @include title;
+    }
+    h2 {
+      margin-bottom: 15%;
+      font-size: 1.75rem;
+    }
+    .cards {
+      position: relative;
+      margin-bottom: 5%;
+      h3 {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        color: $white;
+        width: 35%;
+      }
+    }
+    
+    
+  }
+}
+
+
