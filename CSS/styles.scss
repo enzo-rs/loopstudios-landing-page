@@ -23,35 +23,78 @@ img {
   }
 }
 
-header {
+.hero {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   color: white;
-  font-family: sans-serif;
   position: absolute;
   top: 0;
 
-  .test {
-      height: 60px;
+  header {
       width: 100%;
       padding: 5%;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
     img {
-        width: 50%;
+        &:first-of-type{
+          width: 50%;
+          z-index: 200;
+        } 
+        &:nth-of-type(2){
+          width: 20px;
+          height: 20px;
+          z-index: 200;
+        }
     }
-    ul {
-        display: none;
+    
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: $Black;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      padding-top:20%;
+
+      &.show {
+        display: block;
+      }
+      ul  {
+        text-align: center;
+        li {
+          @include title;
+          letter-spacing: 0px;
+          list-style: none;
+          font-size: 3rem;
+          margin: 7% auto;
+          a {
+            text-decoration: none;
+            color: $white;
+          }
+        }
+      }
     }
+ 
   }
 
   .main-title {
+    display: flex;
+    align-items: center;
+    margin: 40% 0;
         h1 {
           @include title;
             border: white solid 2px;
             width: 90%;
             margin: 0 auto;
+            padding: 5%;
+            word-spacing: 9999px;
+            font-size: 2.5rem;
         }
   }
 }
@@ -68,18 +111,19 @@ main {
     img {
       margin-bottom: 10%;
     }
-    h2 {
-      @include title;
-      font-size: 2rem;
-      margin-bottom: 5%
+    div.content {
+      text-align: center;
+      h2 {
+        @include title;
+        font-size: 2rem;
+        margin-bottom: 5%
+      }
+      p {
+        @include font-alata;
+        color: $Very_Dark_Gray;
+      }
     }
-    p {
-      @include font-alata;
-      color: $Dark_Gray;
-    }
-    h2, p {
-      width: 90%;
-    }
+   
   }
 
   section.creations {
@@ -137,6 +181,10 @@ footer {
     list-style: none;
     li {
       margin: 30% 0 ;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
     }
   }
   div.icons {
@@ -161,3 +209,67 @@ footer {
 }
 
 
+@media only screen and (min-width:900px) {
+  .hero {
+
+    header {
+      padding: 5% 10%;
+      img {
+        &:first-of-type {
+          width: 15%;
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+      .menu {
+        all: initial;
+        
+        ul {
+          display: flex;
+          justify-content: flex-end;
+          li {
+            @include nav;
+            margin: 0 8% 0 0 ;
+          }
+        }
+      }
+      
+    }
+    .main-title {
+      margin: 0 auto;
+      width: 80%;
+      justify-content: center;
+      h1 {
+        margin: 0 auto 0 0 ;
+        width: 60%;
+        word-spacing: 0px;
+        font-size: 5rem;
+      }
+    }
+  }
+
+  main {
+    margin: 0;
+    section.interactive {
+      position: relative;
+      width: 80%;
+      margin: 15% auto;
+      img {
+        width: 70%;
+        margin: 0 auto 0 0;
+      }
+      div.content {
+        width: 50%;
+        padding: 10% 0 0 10%;
+        background-color: $white;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

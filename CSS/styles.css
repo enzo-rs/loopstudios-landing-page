@@ -23,29 +23,68 @@ img {
   object-fit: cover;
 }
 
-header {
+.hero {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   color: white;
-  font-family: sans-serif;
   position: absolute;
   top: 0;
 }
-header .test {
-  height: 60px;
+.hero header {
   width: 100%;
   padding: 5%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
-header .test img {
+.hero header img:first-of-type {
   width: 50%;
+  z-index: 200;
 }
-header .test ul {
+.hero header img:nth-of-type(2) {
+  width: 20px;
+  height: 20px;
+  z-index: 200;
+}
+.hero header .menu {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding-top: 20%;
 }
-header .main-title h1 {
+.hero header .menu.show {
+  display: block;
+}
+.hero header .menu ul {
+  text-align: center;
+}
+.hero header .menu ul li {
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 0px;
+  list-style: none;
+  font-size: 3rem;
+  margin: 7% auto;
+}
+.hero header .menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+.hero .main-title {
+  display: flex;
+  align-items: center;
+  margin: 40% 0;
+}
+.hero .main-title h1 {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -53,6 +92,9 @@ header .main-title h1 {
   border: white solid 2px;
   width: 90%;
   margin: 0 auto;
+  padding: 5%;
+  word-spacing: 9999px;
+  font-size: 2.5rem;
 }
 
 main {
@@ -69,7 +111,10 @@ main section.interactive {
 main section.interactive img {
   margin-bottom: 10%;
 }
-main section.interactive h2 {
+main section.interactive div.content {
+  text-align: center;
+}
+main section.interactive div.content h2 {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -77,12 +122,9 @@ main section.interactive h2 {
   font-size: 2rem;
   margin-bottom: 5%;
 }
-main section.interactive p {
+main section.interactive div.content p {
   font-family: "Alata", sans-serif;
-  color: #8c8c8c;
-}
-main section.interactive h2, main section.interactive p {
-  width: 90%;
+  color: dimgray;
 }
 main section.creations {
   display: flex;
@@ -144,6 +186,10 @@ footer ul {
 footer ul li {
   margin: 30% 0;
 }
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
 footer div.icons {
   margin: 5% 0;
   width: 50%;
@@ -161,6 +207,66 @@ footer .attribution, footer p {
 footer .attribution a, footer p a {
   text-decoration: none;
   color: #8c8c8c;
+}
+
+@media only screen and (min-width: 900px) {
+  .hero header {
+    padding: 5% 10%;
+  }
+  .hero header img:first-of-type {
+    width: 15%;
+  }
+  .hero header img:nth-of-type(2) {
+    display: none;
+  }
+  .hero header .menu {
+    all: initial;
+  }
+  .hero header .menu ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .hero header .menu ul li {
+    font-family: "Alata", sans-serif;
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin: 0 8% 0 0;
+  }
+  .hero .main-title {
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+  }
+  .hero .main-title h1 {
+    margin: 0 auto 0 0;
+    width: 60%;
+    word-spacing: 0px;
+    font-size: 5rem;
+  }
+
+  main {
+    margin: 0;
+  }
+  main section.interactive {
+    position: relative;
+    width: 80%;
+    margin: 15% auto;
+  }
+  main section.interactive img {
+    width: 70%;
+    margin: 0 auto 0 0;
+  }
+  main section.interactive div.content {
+    width: 50%;
+    padding: 10% 0 0 10%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  main section.interactive div.content h2 {
+    font-size: 3rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
