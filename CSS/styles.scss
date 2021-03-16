@@ -302,4 +302,45 @@ footer {
       
     }
   }
+
+  footer {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 10% 3% 10%;
+    & > img {
+      width: 13%;
+      margin: 5% 0 3% 0;
+    }
+    img, ul {
+      text-align: left;
+    }
+    div.icons, p {
+      text-align: right;
+    }
+    div.icons {
+      margin: 5% 0 3% 0;
+
+      a {
+        text-decoration: none;
+        img {
+          margin: 0;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      margin: 0;
+      order: 2;
+      li {
+        margin: 0;
+        margin-right: 5%;
+      }
+    }
+    p {
+      order: 3  ;
+    }
+    & > * {
+      width: 50%;
+    }
+  }
 }

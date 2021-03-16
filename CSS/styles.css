@@ -295,6 +295,46 @@ footer .attribution a, footer p a {
     font-size: 2rem;
     width: 70%;
   }
+
+  footer {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 10% 3% 10%;
+  }
+  footer > img {
+    width: 13%;
+    margin: 5% 0 3% 0;
+  }
+  footer img, footer ul {
+    text-align: left;
+  }
+  footer div.icons, footer p {
+    text-align: right;
+  }
+  footer div.icons {
+    margin: 5% 0 3% 0;
+  }
+  footer div.icons a {
+    text-decoration: none;
+  }
+  footer div.icons a img {
+    margin: 0;
+  }
+  footer ul {
+    display: flex;
+    margin: 0;
+    order: 2;
+  }
+  footer ul li {
+    margin: 0;
+    margin-right: 5%;
+  }
+  footer p {
+    order: 3;
+  }
+  footer > * {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
