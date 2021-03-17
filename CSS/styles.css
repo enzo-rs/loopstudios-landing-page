@@ -8,6 +8,29 @@
 body {
   width: 100%;
 }
+body a:not(a.button) {
+  position: relative;
+}
+body a:not(a.button)::after, body a:not(a.button)::before {
+  position: absolute;
+  top: 100%;
+  content: "";
+  width: 0px;
+  height: 2px;
+  background-color: white;
+  transition: ease-in 0.1s;
+}
+body a:not(a.button)::before {
+  right: 50%;
+  transform-origin: right;
+}
+body a:not(a.button)::after {
+  left: 50%;
+  transform-origin: left;
+}
+body a:not(a.button):hover::after, body a:not(a.button):hover::before {
+  width: 10px;
+}
 
 img {
   width: 100%;
@@ -49,7 +72,6 @@ img {
 .hero header .menu {
   display: none;
   position: fixed;
-  top: 0;
   left: 0;
   background-color: black;
   width: 100%;
@@ -145,12 +167,21 @@ main section.creations .cards {
   position: relative;
   margin-bottom: 5%;
 }
+main section.creations .cards h3, main section.creations .cards picture {
+  transition: ease-in 100ms;
+}
 main section.creations .cards h3 {
   position: absolute;
   top: 50%;
   left: 5%;
   color: white;
   width: 35%;
+}
+main section.creations .cards:hover picture {
+  filter: opacity(50%);
+}
+main section.creations .cards:hover h3 {
+  color: black;
 }
 main section.creations .button {
   font-family: "Josefin Sans", sans-serif;
@@ -164,6 +195,11 @@ main section.creations .button {
   font-weight: bold;
   font-size: 0.875rem;
   margin: 5% 0 20% 0;
+  transition: ease-in 100ms;
+}
+main section.creations .button:hover {
+  background-color: black;
+  color: white;
 }
 
 footer {

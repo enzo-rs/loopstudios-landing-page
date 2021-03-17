@@ -8,6 +8,32 @@
 
 body {
   width: 100%;
+
+  a:not(a.button){
+    position: relative;
+    &::after, &::before {
+      position: absolute;
+      top: 100%;
+      content: "";
+      width: 0px;
+      height: 2px;
+      background-color: white;
+      transition: ease-in 0.1s;
+    }
+    &::before {
+      right: 50%;
+      transform-origin: right;
+    }
+    &::after {
+      left: 50%;
+      transform-origin: left;
+    }
+    &:hover {
+      &::after, &::before {
+        width: 10px;
+      }
+    }
+  }
 }
 img { 
     width: 100%;
@@ -52,7 +78,6 @@ img {
     .menu {
       display: none;
       position: fixed;
-      top: 0;
       left: 0;
       background-color: $Black;
       width: 100%;
@@ -140,12 +165,23 @@ main {
     .cards {
       position: relative;
       margin-bottom: 5%;
+      h3, picture {
+        transition: ease-in 100ms;
+      }
       h3 {
         position: absolute;
         top: 50%;
         left: 5%;
         color: $white;
         width: 35%;
+      }
+      &:hover {
+        picture {
+          filter: opacity(50%);
+        }
+        h3 {
+          color: $Black
+        }
       }
     }
     
@@ -158,6 +194,11 @@ main {
       font-weight: bold;
       font-size: 0.875rem;
       margin: 5% 0 20% 0;
+      transition: ease-in 100ms;
+      &:hover {
+        background-color: $Black;
+        color: $white;
+      }
     }
   }
 }
