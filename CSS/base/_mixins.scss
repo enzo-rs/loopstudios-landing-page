@@ -1,0 +1,88 @@
+@mixin footer {
+    background-color: $Black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include font-alata;
+  text-align: center;
+  padding: 10% 0;
+
+  img {
+    width: 35%;
+    margin: 5% auto;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      margin: 30% 0 ;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+  div.icons {
+    margin: 5% 0;
+    width: 50%;
+    .icon-item {
+      margin: 0 2%;
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  .attribution, p {
+    color: $Dark_Gray;
+    font-size: 0.875rem;
+    a {
+      text-decoration: none;
+      color: $Dark_Gray;
+    }
+  }
+}
+
+@mixin footer_desktop {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 10% 3% 10%;
+    & > img {
+      width: 13%;
+      margin: 5% 0 3% 0;
+    }
+    img, ul {
+      text-align: left;
+    }
+    div.icons, p {
+      text-align: right;
+    }
+    div.icons {
+      margin: 5% 0 3% 0;
+
+      a {
+        text-decoration: none;
+        img {
+          margin: 0;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      margin: 0;
+      order: 2;
+      li {
+        margin: 0;
+        margin-right: 5%;
+      }
+    }
+    p {
+      order: 3  ;
+    }
+    & > * {
+      width: 50%;
+    }
+  
+}
